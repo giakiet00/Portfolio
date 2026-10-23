@@ -52,21 +52,43 @@ document.addEventListener('keydown', event => {
 });
 
 /* =========================================
+   PROJECT FILTERS
+   ========================================= */
+const filterButtons = document.querySelectorAll('[data-filter]');
+const cards = document.querySelectorAll('.project-card');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+        filterButtons.forEach(item => {
+            const active = item === button;
+            item.classList.toggle('is-active', active);
+            item.setAttribute('aria-pressed', String(active));
+        });
+
+        cards.forEach(card => {
+            const categories = card.dataset.category.split(' ');
+            card.hidden = filter !== 'all' && !categories.includes(filter);
+        });
+    });
+});
+
+/* =========================================
    PROJECT CASE STUDIES
    ========================================= */
 const projectDetails = {
     fcinema: {
-        title: 'FCinema — Cinema Ticket Booking System',
+        title: 'FCinema — Cinema Management System',
         eyebrow: 'ACADEMIC TEAM PROJECT · 2026',
-        summary: 'A cinema ticket booking website developed by a seven-member student team. My contribution focused on the Home page and entry points to showtime-based ticket booking.',
+        summary: 'A web-based cinema management project developed with a seven-member student team. My work focused on movie discovery and the home page experience.',
         contributions: [
-            'Developed a database-driven Home page with a dynamic movie carousel and quick-booking options.',
+            'Developed a database-driven Home page with a dynamic movie carousel.',
             'Displayed Now Showing and Coming Soon movie sections.',
             'Worked with the MVC-based Controller, Service, and Repository structure to display movie information.',
             'Collaborated with team members on interface consistency and navigation.'
         ],
         technologies: ['Java', 'JSP / Servlets', 'SQL Server', 'HTML / CSS', 'JavaScript', 'MVC'],
-        note: 'The team repository is public and linked from the project card. Contributions described here refer to my work on the team project.'
+        note: 'The source repository belongs to the team and is currently private. Public links and actual screenshots will be added only with team approval.'
     },
     student: {
         title: 'Student Management Application',
@@ -149,22 +171,26 @@ if (contactForm) {
 
     const submitButton = contactForm.querySelector('.contact-submit');
 
-    const defaultButtonContent = submitButton.innerHTML;
+    const originalButton = submitButton.innerHTML;
 
 
-    contactForm.addEventListener('submit', async event => {
+    // Show validation errors
+    contactForm.addEventListener('invalid', () => {
 
-        // Prevent page redirection
+        formStatus.textContent =
+            'Please complete all required fields correctly.';
+
+        formStatus.classList.add('is-error');
+
+    }, true);
+
+
+    // Submit Form
+    contactForm.addEventListener('submit', async function (event) {
+
         event.preventDefault();
 
 
-        // Validate fields
-        if (!contactForm.reportValidity()) {
-            return;
-        }
-
-
-        // Collect form data
         const formData = new FormData(contactForm);
 
 
@@ -174,20 +200,22 @@ if (contactForm) {
         }
 
 
-        // Update button while sending
+        // Loading state
         submitButton.disabled = true;
 
-        submitButton.textContent = 'Sending...';
+        submitButton.classList.add('is-loading');
+
+        submitButton.textContent = 'Sending';
 
         formStatus.textContent = 'Sending your message...';
 
         formStatus.classList.remove('is-error');
 
 
-        // Stop requests that take too long
+        // Request timeout
         const controller = new AbortController();
 
-        const timeoutId = window.setTimeout(() => {
+        const timeoutId = setTimeout(() => {
 
             controller.abort();
 
@@ -196,7 +224,6 @@ if (contactForm) {
 
         try {
 
-            // FormSubmit AJAX endpoint
             const endpoint = contactForm.action.replace(
 
                 'https://formsubmit.co/',
@@ -206,7 +233,6 @@ if (contactForm) {
             );
 
 
-            // Send message
             const response = await fetch(endpoint, {
 
                 method: 'POST',
@@ -228,81 +254,63 @@ if (contactForm) {
             });
 
 
-            // Read response
             const result = await response.json();
 
 
-            // Check submission result
+            // Check response
             if (
                 !response.ok ||
-                (result.success !== true && result.success !== 'true')
+                result.success === false ||
+                result.success === 'false'
             ) {
 
                 throw new Error(
-                    result.message || 'Message could not be sent'
+                    result.message || 'FormSubmit rejected the message.'
                 );
 
             }
 
 
-            // Show success
+            // Success
             formStatus.textContent =
-                'Your message has been submitted. Thank you!';
+                'Your message has been submitted successfully!';
 
 
-            // Clear form
             contactForm.reset();
 
         } catch (error) {
 
-            // Show error
+            console.error('Contact Form Error:', error);
+
             formStatus.classList.add('is-error');
 
-            formStatus.textContent =
-                'Could not send your message. Please try again or copy my email address below.';
+
+            if (error.name === 'AbortError') {
+
+                formStatus.textContent =
+                    'Request timed out. Please try again.';
+
+            } else {
+
+                formStatus.textContent =
+                    error.message || 'Unable to send message.';
+
+            }
 
         } finally {
 
-            // Restore button
-            window.clearTimeout(timeoutId);
+            clearTimeout(timeoutId);
 
+
+            // Restore button
             submitButton.disabled = false;
 
-            submitButton.innerHTML = defaultButtonContent;
+            submitButton.classList.remove('is-loading');
+
+            submitButton.innerHTML = originalButton;
 
         }
 
     });
 
-}
-
-/* =========================================
-   CONTACT EMAIL
-   ========================================= */
-const copyEmailButton = document.querySelector('[data-copy-email]');
-if (copyEmailButton) {
-    copyEmailButton.addEventListener('click', async () => {
-        const email = copyEmailButton.dataset.copyEmail;
-        try {
-            if (navigator.clipboard && window.isSecureContext) {
-                await navigator.clipboard.writeText(email);
-            } else {
-                const field = document.createElement('textarea');
-                field.value = email;
-                field.style.position = 'fixed';
-                field.style.opacity = '0';
-                document.body.appendChild(field);
-                field.select();
-                const copied = document.execCommand('copy');
-                field.remove();
-                if (!copied) throw new Error('Copy failed');
-            }
-            copyEmailButton.textContent = 'Email copied ✓';
-        } catch (_) {
-            copyEmailButton.textContent = email;
-        }
-        window.setTimeout(() => {
-            copyEmailButton.textContent = 'Copy email address';
-        }, 3500);
-    });
 }
