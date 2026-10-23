@@ -1156,6 +1156,8 @@ h1 em {
 /* =========================================
    CONTACT & FOOTER
    ========================================= */
+
+/* Contact Section */
 .contact-section {
     padding: 96px 0 120px;
 }
@@ -1166,13 +1168,24 @@ h1 em {
     justify-content: space-between;
     align-items: center;
     gap: 30px;
+
     overflow: hidden;
     border-radius: 28px;
     padding: 70px 75px;
+
     background: #adf2da;
     color: #0a2d29;
 }
 
+.contact-content {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* Contact Heading */
 .contact-panel .section-kicker {
     color: #24765f;
 }
@@ -1192,7 +1205,8 @@ h1 em {
     color: #426960;
 }
 
-/* Contact buttons */
+
+/* Contact Buttons */
 .button-dark {
     background: #102e2a;
     color: #ffffff;
@@ -1216,13 +1230,147 @@ h1 em {
     border-color: #0b5748;
 }
 
+
+/* Contact Form */
+.contact-form {
+    display: grid;
+    gap: 16px;
+
+    width: 100%;
+    max-width: 650px;
+
+    margin: 26px 0 18px;
+}
+
+
+/* Name & Email Row */
+.contact-form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+
+/* Form Fields */
+.contact-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contact-field label {
+    color: #143d37;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* Input & Textarea */
+.contact-field input,
+.contact-field textarea {
+    width: 100%;
+    min-width: 0;
+
+    padding: 13px 15px;
+
+    border: 1px solid #6eaca0;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.92);
+    color: #102e2a;
+
+    font: inherit;
+    font-size: 14px;
+
+    outline: none;
+}
+
+
+/* Placeholder */
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+    color: #617c75;
+    opacity: 1;
+}
+
+
+/* Input Focus */
+.contact-field input:focus,
+.contact-field textarea:focus {
+    border-color: #087f69;
+    box-shadow: 0 0 0 3px rgba(8, 127, 105, 0.2);
+}
+
+
+/* Message */
+.contact-field textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+
+/* Spam Protection */
+.contact-honeypot {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+}
+
+
+/* Send Button */
+.contact-submit {
+    justify-self: start;
+    min-width: 170px;
+}
+
+.contact-submit:disabled {
+    opacity: 0.7;
+    cursor: wait;
+    transform: none;
+}
+
+
+/* Status Message */
+.contact-panel p.form-status {
+    min-height: 1.5em;
+    margin: 0;
+
+    color: #0d604b;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.contact-panel p.form-status.is-error {
+    color: #982b3a;
+}
+
+
+/* Privacy Notice */
+.contact-panel p.contact-privacy {
+    margin: 0;
+
+    color: #426960;
+    font-size: 12px;
+}
+
+
+/* Other Contact Options */
+.contact-buttons {
+    margin-top: 22px;
+}
+
+
+/* Contact Decoration */
 .contact-art {
     position: relative;
     flex: 0 0 210px;
+
     display: grid;
     place-items: center;
+
     height: 210px;
     border-radius: 50%;
+
     background: #83ddbc;
 }
 
@@ -1234,7 +1382,8 @@ h1 em {
 
 .orbit {
     position: absolute;
-    border: 1px solid rgba(21, 127, 101, .5);
+
+    border: 1px solid rgba(21, 127, 101, 0.5);
     border-radius: 50%;
 }
 
@@ -1246,6 +1395,8 @@ h1 em {
     inset: -58px;
 }
 
+
+/* Footer */
 .site-footer {
     border-top: 1px solid var(--line);
     padding: 30px 0;
@@ -1257,6 +1408,7 @@ h1 em {
     flex-wrap: wrap;
     gap: 15px;
     align-items: center;
+
     color: var(--muted);
     font-size: 12px;
 }
@@ -1269,6 +1421,20 @@ h1 em {
 .footer-inner a {
     color: var(--accent-strong);
     font-weight: 800;
+}
+
+
+/* Contact Form Responsive */
+@media (max-width: 600px) {
+
+    .contact-form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-submit {
+        width: 100%;
+    }
+
 }
 
 /* =========================================

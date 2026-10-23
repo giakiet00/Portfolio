@@ -137,6 +137,144 @@ dialog.addEventListener('click', event => {
    ========================================= */
 document.querySelector('#year').textContent = String(new Date().getFullYear());
 
+/* =========================================
+   CONTACT FORM
+   ========================================= */
+
+const contactForm = document.querySelector('#contact-form');
+
+if (contactForm) {
+
+    const formStatus = document.querySelector('#contact-form-status');
+
+    const submitButton = contactForm.querySelector('.contact-submit');
+
+    const defaultButtonContent = submitButton.innerHTML;
+
+
+    contactForm.addEventListener('submit', async event => {
+
+        // Prevent page redirection
+        event.preventDefault();
+
+
+        // Validate fields
+        if (!contactForm.reportValidity()) {
+            return;
+        }
+
+
+        // Collect form data
+        const formData = new FormData(contactForm);
+
+
+        // Spam protection
+        if (String(formData.get('_honey') || '').trim()) {
+            return;
+        }
+
+
+        // Update button while sending
+        submitButton.disabled = true;
+
+        submitButton.textContent = 'Sending...';
+
+        formStatus.textContent = 'Sending your message...';
+
+        formStatus.classList.remove('is-error');
+
+
+        // Stop requests that take too long
+        const controller = new AbortController();
+
+        const timeoutId = window.setTimeout(() => {
+
+            controller.abort();
+
+        }, 15000);
+
+
+        try {
+
+            // FormSubmit AJAX endpoint
+            const endpoint = contactForm.action.replace(
+
+                'https://formsubmit.co/',
+
+                'https://formsubmit.co/ajax/'
+
+            );
+
+
+            // Send message
+            const response = await fetch(endpoint, {
+
+                method: 'POST',
+
+                headers: {
+
+                    'Content-Type': 'application/json',
+
+                    'Accept': 'application/json'
+
+                },
+
+                body: JSON.stringify(
+                    Object.fromEntries(formData.entries())
+                ),
+
+                signal: controller.signal
+
+            });
+
+
+            // Read response
+            const result = await response.json();
+
+
+            // Check submission result
+            if (
+                !response.ok ||
+                (result.success !== true && result.success !== 'true')
+            ) {
+
+                throw new Error(
+                    result.message || 'Message could not be sent'
+                );
+
+            }
+
+
+            // Show success
+            formStatus.textContent =
+                'Your message has been submitted. Thank you!';
+
+
+            // Clear form
+            contactForm.reset();
+
+        } catch (error) {
+
+            // Show error
+            formStatus.classList.add('is-error');
+
+            formStatus.textContent =
+                'Could not send your message. Please try again or copy my email address below.';
+
+        } finally {
+
+            // Restore button
+            window.clearTimeout(timeoutId);
+
+            submitButton.disabled = false;
+
+            submitButton.innerHTML = defaultButtonContent;
+
+        }
+
+    });
+
+}
 
 /* =========================================
    CONTACT EMAIL

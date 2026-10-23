@@ -291,32 +291,138 @@
 
         <!-- CONTACT -->
         <section class="section contact-section" id="contact" aria-labelledby="contact-heading">
+
             <div class="container contact-panel">
-                <div>
+
+                <div class="contact-content">
+
                     <p class="section-kicker">04 / LET'S CONNECT</p>
-                    <h2 id="contact-heading">Have an opportunity <span>in mind?</span></h2>
-                    <p>I'm looking for a chance to learn, contribute, and grow as a software developer. I'd love to hear
-                        from you.</p>
+
+                    <h2 id="contact-heading">
+                        Have an opportunity <span>in mind?</span>
+                    </h2>
+
+                    <p>
+                        I'm looking for a chance to learn, contribute, and grow
+                        as a software developer. I'd love to hear from you.
+                    </p>
+
+                    <!-- Contact Form -->
+                    <form class="contact-form" id="contact-form"
+                        action="https://formsubmit.co/kietnhgce200123@gmail.com" method="POST">
+
+                        <input type="hidden" name="_subject" value="New message from Gia Kiet's portfolio">
+
+                        <input type="hidden" name="_captcha" value="false">
+
+                        <input type="hidden" name="_template" value="table">
+
+                        <!-- Spam Protection -->
+                        <div class="contact-honeypot" aria-hidden="true">
+
+                            <label for="contact-website">
+                                Leave this field empty
+                            </label>
+
+                            <input id="contact-website" type="text" name="_honey" tabindex="-1" autocomplete="off">
+
+                        </div>
+
+                        <!-- Name & Email -->
+                        <div class="contact-form-row">
+
+                            <div class="contact-field">
+
+                                <label for="contact-name">
+                                    Your name
+                                </label>
+
+                                <input type="text" id="contact-name" name="name" placeholder="Your full name"
+                                    autocomplete="name" maxlength="100" required>
+
+                            </div>
+
+                            <div class="contact-field">
+
+                                <label for="contact-email">
+                                    Your email
+                                </label>
+
+                                <input type="email" id="contact-email" name="email" placeholder="you@example.com"
+                                    autocomplete="email" maxlength="254" required>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Message -->
+                        <div class="contact-field">
+
+                            <label for="contact-message">
+                                Message
+                            </label>
+
+                            <textarea id="contact-message" name="message"
+                                placeholder="Tell me about your opportunity or project..." rows="5" minlength="10"
+                                maxlength="3000" required></textarea>
+
+                        </div>
+
+                        <!-- Send Button -->
+                        <button class="button button-dark contact-submit" type="submit">
+
+                            Send Message
+                            <span aria-hidden="true">↗</span>
+
+                        </button>
+
+                        <!-- Status Message -->
+                        <p class="form-status" id="contact-form-status" role="status" aria-live="polite">
+                        </p>
+
+                        <p class="contact-privacy">
+                            Messages are processed by FormSubmit to deliver them to my email.
+                        </p>
+
+                    </form>
+
+                    <!-- Other Contact Options -->
                     <div class="contact-buttons">
-                        <a class="button button-dark"
-                            href="https://mail.google.com/mail/?view=cm &amp;fs=1&amp;to=kietnhgce200123%40gmail.com&amp;su=Portfolio%20inquiry"
-                            target="_blank" rel="noopener noreferrer">
-                            Compose in Gmail <span aria-hidden="true">↗</span>
-                        </a>
+
                         <button class="button button-outline-dark" type="button"
                             data-copy-email="kietnhgce200123@gmail.com" aria-live="polite">
+
                             Copy email address
+
                         </button>
+
                         <a class="button button-outline-dark" href="https://github.com/giakiet00" target="_blank"
                             rel="noopener noreferrer">
-                            My GitHub <span aria-hidden="true">↗</span>
+
+                            My GitHub
+                            <span aria-hidden="true">↗</span>
+
                         </a>
+
                     </div>
+
                 </div>
-                <div class="contact-art" aria-hidden="true"><span>@</span><span class="orbit orbit-one"></span><span
-                        class="orbit orbit-two"></span></div>
+
+                <!-- Decoration -->
+                <div class="contact-art" aria-hidden="true">
+
+                    <span>@</span>
+
+                    <span class="orbit orbit-one"></span>
+
+                    <span class="orbit orbit-two"></span>
+
+                </div>
+
             </div>
+
         </section>
+
     </main>
 
     <footer class="site-footer">
