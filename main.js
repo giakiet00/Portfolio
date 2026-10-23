@@ -154,23 +154,27 @@ if (contactForm) {
 
     contactForm.addEventListener('submit', async event => {
 
+        // Prevent page redirection
         event.preventDefault();
 
 
+        // Validate fields
         if (!contactForm.reportValidity()) {
             return;
         }
 
 
+        // Collect form data
         const formData = new FormData(contactForm);
 
 
-        // Spam Protection
+        // Spam protection
         if (String(formData.get('_honey') || '').trim()) {
             return;
         }
 
 
+        // Update button while sending
         submitButton.disabled = true;
 
         submitButton.textContent = 'Sending...';
@@ -180,6 +184,7 @@ if (contactForm) {
         formStatus.classList.remove('is-error');
 
 
+        // Stop requests that take too long
         const controller = new AbortController();
 
         const timeoutId = window.setTimeout(() => {
@@ -191,6 +196,7 @@ if (contactForm) {
 
         try {
 
+            // FormSubmit AJAX endpoint
             const endpoint = contactForm.action.replace(
 
                 'https://formsubmit.co/',
@@ -200,6 +206,7 @@ if (contactForm) {
             );
 
 
+            // Send message
             const response = await fetch(endpoint, {
 
                 method: 'POST',
@@ -221,68 +228,42 @@ if (contactForm) {
             });
 
 
-            const responseText = await response.text();
-
-            let result;
-
-
-            try {
-
-                result = JSON.parse(responseText);
-
-            } catch (error) {
-
-                throw new Error(
-                    `FormSubmit returned an invalid response (HTTP ${response.status}).`
-                );
-
-            }
+            // Read response
+            const result = await response.json();
 
 
+            // Check submission result
             if (
                 !response.ok ||
                 (result.success !== true && result.success !== 'true')
             ) {
 
                 throw new Error(
-                    result.message || `FormSubmit returned HTTP ${response.status}.`
+                    result.message || 'Message could not be sent'
                 );
 
             }
 
 
+            // Show success
             formStatus.textContent =
                 'Your message has been submitted. Thank you!';
 
 
+            // Clear form
             contactForm.reset();
 
         } catch (error) {
 
-            console.error('Portfolio contact form error:', error);
-
+            // Show error
             formStatus.classList.add('is-error');
 
-
-            if (error.name === 'AbortError') {
-
-                formStatus.textContent =
-                    'The request timed out. Please try again.';
-
-            } else if (error instanceof TypeError) {
-
-                formStatus.textContent =
-                    'Network error. Open this website through GitHub Pages and try again.';
-
-            } else {
-
-                formStatus.textContent =
-                    error.message || 'Could not send your message.';
-
-            }
+            formStatus.textContent =
+                'Could not send your message. Please try again or copy my email address below.';
 
         } finally {
 
+            // Restore button
             window.clearTimeout(timeoutId);
 
             submitButton.disabled = false;
