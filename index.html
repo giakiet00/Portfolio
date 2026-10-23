@@ -28,8 +28,6 @@
             <div class="header-actions">
                 <button class="icon-button theme-toggle" type="button" aria-label="Switch to light mode"
                     title="Change theme">☀</button>
-                <a class="header-cta" href="mailto:kietnhgce200123@gmail.com">Let's talk <span
-                        aria-hidden="true">↗</span></a>
                 <button class="icon-button menu-toggle" type="button" aria-label="Open navigation menu"
                     aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
             </div>
@@ -45,7 +43,8 @@
                     <p class="eyebrow"><span class="status-dot"></span> Software Engineering Student · FPT University
                     </p>
                     <h1 id="hero-title">Hi, I'm <span class="text-gradient">Gia Kiet.</span><br>I turn ideas into
-                        <em>working software.</em></h1>
+                        <em>working software.</em>
+                    </h1>
                     <p class="hero-description">An aspiring <strong>Software Developer Intern</strong> who enjoys
                         building practical applications, understanding how systems work, and solving problems one step
                         at a time.</p>
@@ -125,12 +124,11 @@
         <!-- SKILLS -->
         <section class="section skills-section" id="skills" aria-labelledby="skills-heading">
             <div class="container">
-                <div class="section-heading section-heading-split">
+                <div class="section-heading">
                     <div>
                         <p class="section-kicker">02 / MY TOOLKIT</p>
                         <h2 id="skills-heading">Skills I'm <span>building on.</span></h2>
                     </div>
-                    <p>Foundations first, with room to grow.</p>
                 </div>
                 <div class="skills-grid">
                     <article class="skill-card">
@@ -167,31 +165,26 @@
         <!-- PROJECTS -->
         <section class="section projects-section" id="projects" aria-labelledby="projects-heading">
             <div class="container">
-                <div class="section-heading section-heading-split">
+                <div class="section-heading">
                     <div>
                         <p class="section-kicker">03 / SELECTED WORK</p>
                         <h2 id="projects-heading">Projects &amp; <span>practice.</span></h2>
                     </div>
-                    <p>A few things I've built or helped bring to life through coursework.</p>
-                </div>
-                <div class="filter-bar" role="group" aria-label="Filter projects">
-                    <button type="button" class="filter-button is-active" data-filter="all" aria-pressed="true">All
-                        projects <span>03</span></button>
-                    <button type="button" class="filter-button" data-filter="web" aria-pressed="false">Web</button>
-                    <button type="button" class="filter-button" data-filter="desktop"
-                        aria-pressed="false">Desktop</button>
-                    <button type="button" class="filter-button" data-filter="java" aria-pressed="false">Java</button>
                 </div>
 
                 <div class="projects-grid">
                     <article class="project-card project-featured" data-category="web java">
                         <div class="project-preview preview-cinema"
-                            aria-label="Concept illustration for the FCinema website">
-                            <div class="preview-top"><span class="preview-logo">F<span>C</span>INEMA</span><span>Home ·
-                                    Movies · Showtimes</span></div>
+                            aria-label="Illustration of the FCinema cinema ticket booking website">
+                            <div class="preview-top">
+                                <span class="preview-logo">F<span>C</span>INEMA</span>
+                                <span>Movies · Showtimes · Booking</span>
+                            </div>
                             <div class="movie-preview-layout">
-                                <div class="movie-copy"><span class="mini-label">NOW SHOWING</span><strong>Experience
-                                        the<br>big screen.</strong><span class="mini-button">Explore films ↗</span>
+                                <div class="movie-copy">
+                                    <span class="mini-label">CINEMA TICKET BOOKING</span>
+                                    <strong>Pick a film.<br>Book your seat.</strong>
+                                    <span class="mini-button">Book tickets ↗</span>
                                 </div>
                                 <div class="movie-posters"><span class="poster poster-one"></span><span
                                         class="poster poster-two"></span><span class="poster poster-three"></span></div>
@@ -201,14 +194,22 @@
                         <div class="project-info">
                             <div class="project-topline"><span>01 / TEAM PROJECT</span><span>2026</span></div>
                             <h3>FCinema <span>↗</span></h3>
-                            <p>A cinema management website developed in a 7-member team. I worked on a data-driven Home
-                                page featuring a carousel and Now Showing / Coming Soon movie sections.</p>
+                            <p>A cinema ticket booking website developed by a 7-member team. I built a database-driven
+                                Home page with movie listings, a carousel, and quick access to showtime-based booking.
+                            </p>
                             <div class="project-tech"><span>Java</span><span>JSP / Servlet</span><span>SQL
                                     Server</span><span>MVC</span></div>
-                            <div class="project-actions"><button type="button" class="text-button"
-                                    data-project="fcinema">View case study <span
-                                        aria-hidden="true">↗</span></button><span class="privacy-label">Team source:
-                                    private</span></div>
+                            <div class="project-actions">
+                                <button type="button" class="text-button" data-project="fcinema">
+                                    View case study <span aria-hidden="true">↗</span>
+                                </button>
+
+                                <a class="text-button source-link"
+                                    href="https://github.com/Khang2711/Project_Group2_SWP" target="_blank"
+                                    rel="noopener noreferrer" aria-label="View FCinema source code on GitHub">
+                                    GitHub code <span aria-hidden="true">↗</span>
+                                </a>
+                            </div>
                         </div>
                     </article>
 
@@ -234,10 +235,19 @@
                             <h3>Student Management <span>↗</span></h3>
                             <p>A WPF desktop exercise with Add, Update, Delete, and Search functions, built while
                                 learning C#/.NET and XAML.</p>
-                            <div class="project-tech"><span>C#/.NET (Basic)</span><span>WPF</span><span>XAML</span>
+                            <div class="project-tech"><span>C#/.NET
+                                    (Basic)</span><span>WPF</span><span>XAML</span><span>MVVM</span>
                             </div>
-                            <div class="project-actions"><button type="button" class="text-button"
-                                    data-project="student">View case study <span aria-hidden="true">↗</span></button>
+                            <div class="project-actions">
+                                <button type="button" class="text-button" data-project="student">
+                                    View case study <span aria-hidden="true">↗</span>
+                                </button>
+
+                                <a class="text-button source-link" href="https://github.com/Khang2711/PRN_Project"
+                                    target="_blank" rel="noopener noreferrer"
+                                    aria-label="View Student Management project on GitHub">
+                                    GitHub code <span aria-hidden="true">↗</span>
+                                </a>
                             </div>
                         </div>
                     </article>
@@ -262,14 +272,20 @@
                             <p>A Java academic game project focused on object-oriented structure, MVC concepts, and the
                                 game's interface flow.</p>
                             <div class="project-tech"><span>Java</span><span>OOP</span><span>MVC</span></div>
-                            <div class="project-actions"><button type="button" class="text-button"
-                                    data-project="pacman">View case study <span aria-hidden="true">↗</span></button>
+                            <div class="project-actions">
+                                <button type="button" class="text-button" data-project="pacman">
+                                    View case study <span aria-hidden="true">↗</span>
+                                </button>
+
+                                <a class="text-button source-link" href="https://github.com/giakiet00/Pacman"
+                                    target="_blank" rel="noopener noreferrer"
+                                    aria-label="View Pac-Man source code on GitHub">
+                                    GitHub code <span aria-hidden="true">↗</span>
+                                </a>
                             </div>
                         </div>
                     </article>
                 </div>
-                <p class="projects-note">Project visuals are conceptual illustrations. Actual screenshots and public
-                    source links can be added when available and permitted by each team.</p>
             </div>
         </section>
 
@@ -281,11 +297,21 @@
                     <h2 id="contact-heading">Have an opportunity <span>in mind?</span></h2>
                     <p>I'm looking for a chance to learn, contribute, and grow as a software developer. I'd love to hear
                         from you.</p>
-                    <div class="contact-buttons"><a class="button button-dark"
-                            href="mailto:kietnhgce200123@gmail.com">Send me an email <span
-                                aria-hidden="true">↗</span></a><a class="button button-outline-dark"
-                            href="https://github.com/giakiet00" target="_blank" rel="noopener noreferrer">My GitHub
-                            <span aria-hidden="true">↗</span></a></div>
+                    <div class="contact-buttons">
+                        <a class="button button-dark"
+                            href="https://mail.google.com/mail/?view=cm &amp;fs=1&amp;to=kietnhgce200123%40gmail.com&amp;su=Portfolio%20inquiry"
+                            target="_blank" rel="noopener noreferrer">
+                            Compose in Gmail <span aria-hidden="true">↗</span>
+                        </a>
+                        <button class="button button-outline-dark" type="button"
+                            data-copy-email="kietnhgce200123@gmail.com" aria-live="polite">
+                            Copy email address
+                        </button>
+                        <a class="button button-outline-dark" href="https://github.com/giakiet00" target="_blank"
+                            rel="noopener noreferrer">
+                            My GitHub <span aria-hidden="true">↗</span>
+                        </a>
+                    </div>
                 </div>
                 <div class="contact-art" aria-hidden="true"><span>@</span><span class="orbit orbit-one"></span><span
                         class="orbit orbit-two"></span></div>
@@ -294,9 +320,10 @@
     </main>
 
     <footer class="site-footer">
-        <div class="container footer-inner"><span><strong>GK<span class="brand-dot">.</span></strong> Built with
-                curiosity, HTML, CSS &amp; JavaScript.</span><span>© <span id="year">2026</span> Nguyen Hoang Gia
-                Kiet</span><a href="#top">Back to top ↑</a></div>
+        <div class="container footer-inner">
+            <span>© <span id="year">2026</span> Nguyen Hoang Gia Kiet</span>
+            <a href="#top">Back to top ↑</a>
+        </div>
     </footer>
 
     <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title">

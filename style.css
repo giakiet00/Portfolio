@@ -202,22 +202,6 @@ svg {
     font-size: 20px;
 }
 
-.header-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 16px;
-    padding: 11px 17px;
-    border: 1px solid var(--line);
-    border-radius: 13px;
-    font-size: 13px;
-    font-weight: 800;
-}
-
-.header-cta:hover {
-    border-color: var(--accent-strong);
-    color: var(--accent);
-}
-
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -746,44 +730,10 @@ h1 em {
 
 /* =========================================
    PROJECTS
-========================================= */
+   ========================================= */
 .projects-section {
     background: var(--bg-alt);
     border-top: 1px solid var(--line);
-}
-
-.filter-bar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 0 0 24px;
-}
-
-.filter-button {
-    color: var(--muted);
-    background: var(--surface);
-    border: 1px solid var(--line);
-    padding: 9px 17px;
-    border-radius: 10px;
-    font-size: 12px;
-    font-weight: 800;
-    transition: color .2s, border-color .2s, background .2s;
-}
-
-.filter-button span {
-    margin-left: 6px;
-    opacity: .65;
-}
-
-.filter-button:hover {
-    color: var(--text);
-    border-color: var(--accent-strong);
-}
-
-.filter-button.is-active {
-    background: var(--accent);
-    color: #0b2a24;
-    border-color: var(--accent);
 }
 
 .projects-grid {
@@ -906,15 +856,14 @@ h1 em {
     transform: translate(3px, -3px);
 }
 
-.privacy-label {
-    color: var(--muted);
-    font-size: 11px;
+
+.source-link {
+    text-decoration: none;
 }
 
-.projects-note {
-    color: var(--muted);
-    font-size: 12px;
-    margin: 19px 0 0;
+.source-link:hover,
+.source-link:focus-visible {
+    text-decoration: underline;
 }
 
 /* FCinema illustrative preview */
@@ -1243,14 +1192,28 @@ h1 em {
     color: #426960;
 }
 
+/* Contact buttons */
 .button-dark {
     background: #102e2a;
-    color: #fff;
+    color: #ffffff;
+    border: 1px solid #102e2a;
+}
+
+.button-dark:hover {
+    background: #195348;
+    border-color: #195348;
 }
 
 .button-outline-dark {
-    border: 1px solid #6eaca0;
-    color: #0e4e41;
+    background: transparent;
+    color: #0b4339;
+    border: 1px solid #0b5748;
+}
+
+.button-outline-dark:hover {
+    background: #0b5748;
+    color: #ffffff;
+    border-color: #0b5748;
 }
 
 .contact-art {
@@ -1434,10 +1397,6 @@ h1 em {
 
     .menu-toggle {
         display: flex;
-    }
-
-    .header-cta {
-        display: none;
     }
 
     .site-nav {
