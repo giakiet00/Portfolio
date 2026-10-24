@@ -3,311 +3,881 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <meta name="theme-color" content="#0b1220">
+
     <meta name="description"
         content="Portfolio of Nguyen Hoang Gia Kiet, a Software Engineering student at FPT University interested in software development.">
+
     <title>Gia Kiet | Software Developer Portfolio</title>
+
     <link rel="stylesheet" href="style.css">
+
     <script src="main.js" defer></script>
 </head>
 
 <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+
+    <a class="skip-link" href="#main">
+        Skip to content
+    </a>
+
+    <!-- =========================================
+         HEADER
+    ========================================= -->
 
     <header class="site-header">
+
         <div class="container header-inner">
-            <a class="brand" href="#top" aria-label="Gia Kiet, back to top"><span
-                    class="brand-square">GK</span><span>Gia Kiet<span class="brand-dot">.</span></span></a>
+
+            <a class="brand" href="#top" aria-label="Gia Kiet, back to top">
+
+                <span class="brand-square">GK</span>
+
+                <span>
+                    Gia Kiet<span class="brand-dot">.</span>
+                </span>
+
+            </a>
+
             <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+
                 <a href="#about">About</a>
+
                 <a href="#skills">Skills</a>
+
                 <a href="#projects">Projects</a>
+
                 <a href="#contact">Contact</a>
+
             </nav>
+
             <div class="header-actions">
+
+                <!-- Language Toggle -->
+
+                <button class="icon-button language-toggle" type="button" aria-label="Switch to Vietnamese"
+                    title="Change language">
+
+                    <span class="language-icon" aria-hidden="true">
+                        🌐
+                    </span>
+
+                    <span class="language-code">
+                        EN
+                    </span>
+
+                </button>
+
+                <!-- Theme Toggle -->
+
                 <button class="icon-button theme-toggle" type="button" aria-label="Switch to light mode"
-                    title="Change theme">☀</button>
+                    title="Change theme">
+                    ☀
+                </button>
+
+                <!-- Mobile Menu -->
+
                 <button class="icon-button menu-toggle" type="button" aria-label="Open navigation menu"
-                    aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+                    aria-expanded="false" aria-controls="site-nav">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
             </div>
+
         </div>
+
     </header>
 
     <main id="main">
-        <!-- HERO -->
+
+        <!-- =========================================
+             HERO
+        ========================================= -->
+
         <section class="hero section" id="top" aria-labelledby="hero-title">
+
             <div class="hero-glow" aria-hidden="true"></div>
-            <div class="container hero-grid">
-                <div class="hero-copy">
-                    <p class="eyebrow"><span class="status-dot"></span> Software Engineering Student · FPT University
+
+            <div class="container hero-intro-grid">
+
+                <!-- Profile Image -->
+
+                <div class="hero-portrait-wrap">
+
+                    <div class="hero-photo-frame">
+
+                        <div class="hero-photo-inner">
+
+                            <img src="assets/images/AnhTheCV.png" alt="Nguyen Hoang Gia Kiet">
+
+                        </div>
+
+                    </div>
+
+                    <!-- Floating Badge 1 -->
+
+                    <div class="hero-badge hero-badge-code">
+
+                        <span class="hero-badge-icon">
+                            &lt;/&gt;
+                        </span>
+
+                        <span>
+                            Passion for<br>
+                            Technology
+                        </span>
+
+                    </div>
+
+                    <!-- Floating Badge 2 -->
+
+                    <div class="hero-badge hero-badge-location">
+
+                        <span class="hero-badge-icon">
+                            📍
+                        </span>
+
+                        <span>
+                            Can Tho,<br>
+                            Vietnam
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- Introduction -->
+
+                <div class="hero-intro-copy">
+
+                    <p class="eyebrow">
+
+                        <span class="status-dot"></span>
+
+                        SOFTWARE ENGINEERING STUDENT · FPT UNIVERSITY
+
                     </p>
-                    <h1 id="hero-title">Hi, I'm <span class="text-gradient">Gia Kiet.</span><br>I turn ideas into
-                        <em>working software.</em>
+
+                    <h1 id="hero-title">
+
+                        Hi, I'm
+
+                        <span class="text-gradient">
+                            Gia Kiet.
+                        </span>
+
                     </h1>
-                    <p class="hero-description">An aspiring <strong>Software Developer Intern</strong> who enjoys
-                        building practical applications, understanding how systems work, and solving problems one step
-                        at a time.</p>
+
+                    <p class="hero-role">
+                        Aspiring Software Developer Intern
+                    </p>
+
+                    <p class="hero-description">
+
+                        I'm <strong>Nguyen Hoang Gia Kiet</strong>,
+                        a Software Engineering student at FPT University.
+
+                        I enjoy developing practical software applications,
+                        exploring how systems work, and turning ideas into
+                        useful solutions.
+
+                        With hands-on experience in academic projects using
+                        <strong>Java, OOP, MVC, and SQL Server</strong>,
+                        I'm continuously improving my technical skills,
+                        problem-solving abilities, and teamwork.
+
+                    </p>
+
+                    <!-- Action Buttons -->
+
                     <div class="hero-actions">
-                        <a class="button button-primary" href="#projects">Explore my projects <span
-                                aria-hidden="true">↗</span></a>
-                        <a class="button button-secondary" href="#contact">Get in touch <span
-                                aria-hidden="true">→</span></a>
+
+                        <a class="button button-primary" href="#projects">
+                            Explore Projects
+
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                        <a class="button button-secondary button-cv" href="assets/documents/NguyenHoangGiaKiet_CV.pdf"
+                            download="NguyenHoangGiaKiet_CV.pdf">
+                            Download CV
+
+                            <span aria-hidden="true">↓</span>
+                        </a>
+
+                        <a class="button button-secondary" href="#contact">
+                            Contact Me
+
+                            <span aria-hidden="true">→</span>
+                        </a>
+
                     </div>
+
+                    <!-- Social Links -->
+
+                    <div class="hero-socials">
+
+                        <span class="hero-social-label">
+                            Connect with me
+                        </span>
+
+                        <!-- GitHub -->
+
+                        <a class="hero-social-link" href="https://github.com/giakiet00" target="_blank"
+                            rel="noopener noreferrer" aria-label="GitHub Profile" title="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16"
+                                fill="currentColor" aria-hidden="true">
+                                <path
+                                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                            </svg>
+                        </a>
+
+                        <!-- Facebook -->
+
+                        <a class="hero-social-link facebook-link"
+                            href="https://www.facebook.com/gia.kiet.252979?locale=vi_VN" target="_blank"
+                            rel="noopener noreferrer" aria-label="Facebook Profile" title="Facebook">
+                            f
+                        </a>
+
+                        <!-- Contact -->
+
+                        <a class="hero-social-link" href="#contact" aria-label="Contact Me" title="Contact">
+                            ✉
+                        </a>
+
+                    </div>
+
+                    <!-- Additional Information -->
+
                     <div class="hero-meta">
-                        <span><span class="meta-icon" aria-hidden="true">⌁</span> Can Tho, Vietnam</span>
-                        <span><span class="meta-icon" aria-hidden="true">◇</span> Open to internship
-                            opportunities</span>
+
+                        <span>
+
+                            <span class="meta-icon">◇</span>
+
+                            Open to internship opportunities
+
+                        </span>
+
                     </div>
+
                 </div>
 
-                <div class="hero-visual" aria-label="Illustration of a software development workspace">
-                    <div class="floating-tag tag-one">Java <span>●</span> OOP</div>
-                    <div class="floating-tag tag-two">SQL Server <span>↗</span></div>
-                    <div class="editor-window">
-                        <div class="editor-topbar"><span class="window-dots"
-                                aria-hidden="true"><i></i><i></i><i></i></span><span>about-me.js</span><span
-                                class="editor-tab">JS</span></div>
-                        <div class="editor-body" aria-hidden="true">
-                            <span
-                                class="line-number">01</span><code><span class="code-purple">const</span> developer = {</code>
-                            <span
-                                class="line-number">02</span><code>  name: <span class="code-green">"Gia Kiet"</span>,</code>
-                            <span
-                                class="line-number">03</span><code>  focus: <span class="code-green">"Software"</span>,</code>
-                            <span class="line-number">04</span><code>  stack: [</code>
-                            <span
-                                class="line-number">05</span><code>    <span class="code-green">"Java"</span>, <span class="code-green">"SQL"</span>, <span class="code-green">"Web"</span></code>
-                            <span class="line-number">06</span><code>  ],</code>
-                            <span
-                                class="line-number">07</span><code>  mindset: <span class="code-green">"Keep learning"</span></code>
-                            <span class="line-number">08</span><code>};</code>
-                            <span
-                                class="line-number">09</span><code><span class="code-comment">// build • test • improve</span></code>
-                        </div>
-                        <div class="editor-status"><span>● Portfolio ready</span><span>UTF-8 · JavaScript</span></div>
-                    </div>
-                    <div class="visual-caption"><span class="caption-icon">✳</span>
-                        <div><strong>Curious by nature.</strong><small>Focused on the fundamentals.</small></div>
-                    </div>
-                </div>
             </div>
+
+            <!-- Statistics -->
+
             <div class="container stats-row" aria-label="Portfolio highlights">
-                <div><strong>03</strong><span>Selected projects</span></div>
-                <div><strong>07</strong><span>FCinema team members</span></div>
-                <div><strong>2024<span class="stat-plus">+</span></strong><span>Software Engineering studies</span>
+
+                <div>
+                    <strong>03</strong>
+                    <span>Selected projects</span>
                 </div>
-                <p>Learning through real practice, thoughtful collaboration, and continuous improvement.</p>
+
+                <div>
+                    <strong>07</strong>
+                    <span>FCinema team members</span>
+                </div>
+
+                <div>
+                    <strong>
+                        2024<span class="stat-plus">+</span>
+                    </strong>
+
+                    <span>Software Engineering studies</span>
+                </div>
+
+                <p>
+                    Learning through real practice, thoughtful collaboration,
+                    and continuous improvement.
+                </p>
+
             </div>
+
         </section>
 
-        <!-- ABOUT -->
+        <!-- =========================================
+             ABOUT ME
+        ========================================= -->
+
         <section class="section about-section" id="about" aria-labelledby="about-heading">
+
             <div class="container about-grid">
+
                 <div class="section-heading">
-                    <p class="section-kicker">01 / ABOUT ME</p>
-                    <h2 id="about-heading">A learner who loves <span>figuring things out.</span></h2>
+
+                    <p class="section-kicker">
+                        01 / ABOUT ME
+                    </p>
+
+                    <h2 id="about-heading">
+                        A learner who loves
+                        <span>figuring things out.</span>
+                    </h2>
+
                 </div>
+
                 <div class="about-content">
-                    <p>I'm <strong>Nguyen Hoang Gia Kiet</strong>, a Software Engineering student at <strong>FPT
-                            University – Can Tho Campus</strong>. I have hands-on academic project experience with Java
-                        web development, SQL Server, and the basics of C#/.NET.</p>
-                    <p>I'm especially interested in how user interfaces, business logic, and databases come together. I
-                        value <strong>analytical thinking, teamwork, clear communication,</strong> and learning how to
-                        debug problems rather than just applying a quick fix.</p>
-                    <div class="about-pill-row"><span>Problem-solving</span><span>Team
-                            collaboration</span><span>Analytical thinking</span><span>AI-assisted research</span></div>
+
+                    <p>
+                        I'm <strong>Nguyen Hoang Gia Kiet</strong>,
+                        a Software Engineering student at
+                        <strong>FPT University – Can Tho Campus</strong>.
+
+                        I have hands-on academic project experience with
+                        Java web development, SQL Server, and the basics
+                        of C#/.NET.
+                    </p>
+
+                    <p>
+                        I'm especially interested in how user interfaces,
+                        business logic, and databases come together.
+
+                        I value <strong>analytical thinking, teamwork,
+                            clear communication,</strong> and learning how to
+                        debug problems rather than just applying a quick fix.
+                    </p>
+
+                    <div class="about-pill-row">
+
+                        <span>Problem-solving</span>
+
+                        <span>Team collaboration</span>
+
+                        <span>Analytical thinking</span>
+
+                        <span>AI-assisted research</span>
+
+                    </div>
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- SKILLS -->
+        <!-- =========================================
+             SKILLS
+        ========================================= -->
+
         <section class="section skills-section" id="skills" aria-labelledby="skills-heading">
+
             <div class="container">
+
                 <div class="section-heading">
+
                     <div>
-                        <p class="section-kicker">02 / MY TOOLKIT</p>
-                        <h2 id="skills-heading">Skills I'm <span>building on.</span></h2>
+
+                        <p class="section-kicker">
+                            02 / MY TOOLKIT
+                        </p>
+
+                        <h2 id="skills-heading">
+                            Skills I'm <span>building on.</span>
+                        </h2>
+
                     </div>
+
                 </div>
+
                 <div class="skills-grid">
+
+                    <!-- Skill 1 -->
+
                     <article class="skill-card">
+
                         <div class="skill-icon">{ }</div>
+
                         <h3>Core development</h3>
-                        <p>Java fundamentals, object-oriented programming, MVC architecture.</p>
-                        <div class="skill-tags"><span>Java</span><span>OOP</span><span>MVC</span></div>
-                    </article>
-                    <article class="skill-card">
-                        <div class="skill-icon">&lt;/&gt;</div>
-                        <h3>Web development</h3>
-                        <p>Building interfaces and working with Java web applications.</p>
-                        <div class="skill-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>JSP /
-                                Servlets</span></div>
-                    </article>
-                    <article class="skill-card">
-                        <div class="skill-icon">▤</div>
-                        <h3>Data &amp; tools</h3>
-                        <p>Working with relational data, version control, and development environments.</p>
-                        <div class="skill-tags"><span>SQL Server</span><span>Git / GitHub</span><span>NetBeans</span>
+
+                        <p>
+                            Java fundamentals, object-oriented programming,
+                            MVC architecture.
+                        </p>
+
+                        <div class="skill-tags">
+
+                            <span>Java</span>
+
+                            <span>OOP</span>
+
+                            <span>MVC</span>
+
                         </div>
+
                     </article>
+
+                    <!-- Skill 2 -->
+
                     <article class="skill-card">
-                        <div class="skill-icon">✦</div>
-                        <h3>Currently exploring</h3>
-                        <p>Developing C#/.NET WPF fundamentals and using AI tools to support research and debugging.</p>
-                        <div class="skill-tags"><span>C#/.NET (Basic)</span><span>WPF / MVVM basics</span><span>AI
-                                tools</span></div>
+
+                        <div class="skill-icon">&lt;/&gt;</div>
+
+                        <h3>Web development</h3>
+
+                        <p>
+                            Building interfaces and working with Java
+                            web applications.
+                        </p>
+
+                        <div class="skill-tags">
+
+                            <span>HTML</span>
+
+                            <span>CSS</span>
+
+                            <span>JavaScript</span>
+
+                            <span>JSP / Servlets</span>
+
+                        </div>
+
                     </article>
+
+                    <!-- Skill 3 -->
+
+                    <article class="skill-card">
+
+                        <div class="skill-icon">▤</div>
+
+                        <h3>Data &amp; tools</h3>
+
+                        <p>
+                            Working with relational data, version control,
+                            and development environments.
+                        </p>
+
+                        <div class="skill-tags">
+
+                            <span>SQL Server</span>
+
+                            <span>Git / GitHub</span>
+
+                            <span>NetBeans</span>
+
+                        </div>
+
+                    </article>
+
+                    <!-- Skill 4 -->
+
+                    <article class="skill-card">
+
+                        <div class="skill-icon">✦</div>
+
+                        <h3>Currently exploring</h3>
+
+                        <p>
+                            Developing C#/.NET WPF fundamentals and using
+                            AI tools to support research and debugging.
+                        </p>
+
+                        <div class="skill-tags">
+
+                            <span>C#/.NET (Basic)</span>
+
+                            <span>WPF / MVVM basics</span>
+
+                            <span>AI tools</span>
+
+                        </div>
+
+                    </article>
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- PROJECTS -->
+        <!-- =========================================
+             PROJECTS
+        ========================================= -->
+
         <section class="section projects-section" id="projects" aria-labelledby="projects-heading">
+
             <div class="container">
+
                 <div class="section-heading">
+
                     <div>
-                        <p class="section-kicker">03 / SELECTED WORK</p>
-                        <h2 id="projects-heading">Projects &amp; <span>practice.</span></h2>
+
+                        <p class="section-kicker">
+                            03 / SELECTED WORK
+                        </p>
+
+                        <h2 id="projects-heading">
+                            Projects &amp; <span>practice.</span>
+                        </h2>
+
                     </div>
+
                 </div>
 
                 <div class="projects-grid">
+
+                    <!-- FCinema -->
+
                     <article class="project-card project-featured" data-category="web java">
+
                         <div class="project-preview preview-cinema"
                             aria-label="Illustration of the FCinema cinema ticket booking website">
+
                             <div class="preview-top">
-                                <span class="preview-logo">F<span>C</span>INEMA</span>
-                                <span>Movies · Showtimes · Booking</span>
+
+                                <span class="preview-logo">
+                                    F<span>C</span>INEMA
+                                </span>
+
+                                <span>
+                                    Movies · Showtimes · Booking
+                                </span>
+
                             </div>
+
                             <div class="movie-preview-layout">
+
                                 <div class="movie-copy">
-                                    <span class="mini-label">CINEMA TICKET BOOKING</span>
-                                    <strong>Pick a film.<br>Book your seat.</strong>
-                                    <span class="mini-button">Book tickets ↗</span>
+
+                                    <span class="mini-label">
+                                        CINEMA TICKET BOOKING
+                                    </span>
+
+                                    <strong>
+                                        Pick a film.<br>
+                                        Book your seat.
+                                    </strong>
+
+                                    <span class="mini-button">
+                                        Book tickets ↗
+                                    </span>
+
                                 </div>
-                                <div class="movie-posters"><span class="poster poster-one"></span><span
-                                        class="poster poster-two"></span><span class="poster poster-three"></span></div>
+
+                                <div class="movie-posters">
+
+                                    <span class="poster poster-one"></span>
+
+                                    <span class="poster poster-two"></span>
+
+                                    <span class="poster poster-three"></span>
+
+                                </div>
+
                             </div>
-                            <span class="preview-note">Illustrative preview · Not a product screenshot</span>
+
                         </div>
+
                         <div class="project-info">
-                            <div class="project-topline"><span>01 / TEAM PROJECT</span><span>2026</span></div>
-                            <h3>FCinema <span>↗</span></h3>
-                            <p>A cinema ticket booking website developed by a 7-member team. I built a database-driven
-                                Home page with movie listings, a carousel, and quick access to showtime-based booking.
+
+                            <div class="project-topline">
+
+                                <span>01 / TEAM PROJECT</span>
+
+                                <span>2026</span>
+
+                            </div>
+
+                            <h3>
+                                FCinema <span>↗</span>
+                            </h3>
+
+                            <p>
+                                A cinema ticket booking website developed
+                                by a 7-member team.
+
+                                I built a database-driven Home page with
+                                movie listings, a carousel, and quick access
+                                to showtime-based booking.
                             </p>
-                            <div class="project-tech"><span>Java</span><span>JSP / Servlet</span><span>SQL
-                                    Server</span><span>MVC</span></div>
+
+                            <div class="project-tech">
+
+                                <span>Java</span>
+
+                                <span>JSP / Servlet</span>
+
+                                <span>SQL Server</span>
+
+                                <span>MVC</span>
+
+                            </div>
+
                             <div class="project-actions">
+
                                 <button type="button" class="text-button" data-project="fcinema">
-                                    View case study <span aria-hidden="true">↗</span>
+                                    View case study
+
+                                    <span aria-hidden="true">↗</span>
                                 </button>
 
                                 <a class="text-button source-link"
                                     href="https://github.com/Khang2711/Project_Group2_SWP" target="_blank"
                                     rel="noopener noreferrer" aria-label="View FCinema source code on GitHub">
-                                    GitHub code <span aria-hidden="true">↗</span>
+                                    GitHub code
+
+                                    <span aria-hidden="true">↗</span>
                                 </a>
+
                             </div>
+
                         </div>
+
                     </article>
 
+                    <!-- Student Management -->
+
                     <article class="project-card" data-category="desktop">
+
                         <div class="project-preview preview-students"
-                            aria-label="Concept illustration for a WPF student management application">
+                            aria-label="Illustration for a WPF student management application">
+
                             <div class="app-shell">
-                                <div class="app-title"><span class="app-logo">S</span> Student Manager <span
-                                        class="app-dots">•••</span></div>
-                                <div class="app-search">⌕ &nbsp; Search students...</div>
-                                <div class="app-table">
-                                    <div><b>ID</b><b>Name</b><b>Status</b></div>
-                                    <div><span>001</span><span>Student A</span><i>Active</i></div>
-                                    <div><span>002</span><span>Student B</span><i>Active</i></div>
-                                    <div><span>003</span><span>Student C</span><i>Active</i></div>
+
+                                <div class="app-title">
+
+                                    <span class="app-logo">S</span>
+
+                                    Student Manager
+
+                                    <span class="app-dots">•••</span>
+
                                 </div>
-                                <div class="app-actions"><span>+ Add</span><span>Update</span><span>Delete</span></div>
+
+                                <div class="app-search">
+                                    ⌕ &nbsp; Search students...
+                                </div>
+
+                                <div class="app-table">
+
+                                    <div>
+                                        <b>ID</b>
+                                        <b>Name</b>
+                                        <b>Status</b>
+                                    </div>
+
+                                    <div>
+                                        <span>001</span>
+                                        <span>Student A</span>
+                                        <i>Active</i>
+                                    </div>
+
+                                    <div>
+                                        <span>002</span>
+                                        <span>Student B</span>
+                                        <i>Active</i>
+                                    </div>
+
+                                    <div>
+                                        <span>003</span>
+                                        <span>Student C</span>
+                                        <i>Active</i>
+                                    </div>
+
+                                </div>
+
+                                <div class="app-actions">
+
+                                    <span>+ Add</span>
+
+                                    <span>Update</span>
+
+                                    <span>Delete</span>
+
+                                </div>
+
                             </div>
-                            <span class="preview-note">Illustrative preview</span>
+
                         </div>
+
                         <div class="project-info">
-                            <div class="project-topline"><span>02 / ACADEMIC PRACTICE</span><span>2026</span></div>
-                            <h3>Student Management <span>↗</span></h3>
-                            <p>A WPF desktop exercise with Add, Update, Delete, and Search functions, built while
-                                learning C#/.NET and XAML.</p>
-                            <div class="project-tech"><span>C#/.NET
-                                    (Basic)</span><span>WPF</span><span>XAML</span><span>MVVM</span>
+
+                            <div class="project-topline">
+
+                                <span>02 / ACADEMIC PRACTICE</span>
+
+                                <span>2026</span>
+
                             </div>
+
+                            <h3>
+                                Student Management <span>↗</span>
+                            </h3>
+
+                            <p>
+                                A WPF desktop exercise with Add, Update,
+                                Delete, and Search functions, built while
+                                learning C#/.NET and XAML.
+                            </p>
+
+                            <div class="project-tech">
+
+                                <span>C#/.NET (Basic)</span>
+
+                                <span>WPF</span>
+
+                                <span>XAML</span>
+
+                                <span>MVVM</span>
+
+                            </div>
+
                             <div class="project-actions">
+
                                 <button type="button" class="text-button" data-project="student">
-                                    View case study <span aria-hidden="true">↗</span>
+                                    View case study
+
+                                    <span aria-hidden="true">↗</span>
                                 </button>
 
                                 <a class="text-button source-link" href="https://github.com/Khang2711/PRN_Project"
                                     target="_blank" rel="noopener noreferrer"
                                     aria-label="View Student Management project on GitHub">
-                                    GitHub code <span aria-hidden="true">↗</span>
+                                    GitHub code
+
+                                    <span aria-hidden="true">↗</span>
                                 </a>
+
                             </div>
+
                         </div>
+
                     </article>
 
+                    <!-- Pac-Man -->
+
                     <article class="project-card" data-category="java">
+
                         <div class="project-preview preview-pacman"
                             aria-label="Illustration inspired by a classic maze game">
-                            <div class="maze-board"><span class="maze-label">JAVA GAME • OOP</span>
+
+                            <div class="maze-board">
+
+                                <span class="maze-label">
+                                    JAVA GAME • OOP
+                                </span>
+
                                 <div class="maze-layout">
+
                                     <div class="maze-wall"></div>
-                                    <div class="maze-track"><span class="pacman-shape"></span><span
-                                            class="maze-pellet"></span><span class="maze-pellet"></span><span
-                                            class="ghost-shape"></span></div>
+
+                                    <div class="maze-track">
+
+                                        <span class="pacman-shape"></span>
+
+                                        <span class="maze-pellet"></span>
+
+                                        <span class="maze-pellet"></span>
+
+                                        <span class="ghost-shape"></span>
+
+                                    </div>
+
                                     <div class="maze-wall"></div>
-                                </div><span class="maze-caption">GAMEPLAY · UI · MVC</span>
+
+                                </div>
+
+                                <span class="maze-caption">
+                                    GAMEPLAY · UI · MVC
+                                </span>
+
                             </div>
-                            <span class="preview-note">Illustrative preview</span>
+
                         </div>
+
                         <div class="project-info">
-                            <div class="project-topline"><span>03 / ACADEMIC TEAM PROJECT</span><span>2026</span></div>
-                            <h3>Pac-Man Game <span>↗</span></h3>
-                            <p>A Java academic game project focused on object-oriented structure, MVC concepts, and the
-                                game's interface flow.</p>
-                            <div class="project-tech"><span>Java</span><span>OOP</span><span>MVC</span></div>
+
+                            <div class="project-topline">
+
+                                <span>03 / ACADEMIC TEAM PROJECT</span>
+
+                                <span>2026</span>
+
+                            </div>
+
+                            <h3>
+                                Pac-Man Game <span>↗</span>
+                            </h3>
+
+                            <p>
+                                A Java academic game project focused on
+                                object-oriented structure, MVC concepts,
+                                and the game's interface flow.
+                            </p>
+
+                            <div class="project-tech">
+
+                                <span>Java</span>
+
+                                <span>OOP</span>
+
+                                <span>MVC</span>
+
+                            </div>
+
                             <div class="project-actions">
+
                                 <button type="button" class="text-button" data-project="pacman">
-                                    View case study <span aria-hidden="true">↗</span>
+                                    View case study
+
+                                    <span aria-hidden="true">↗</span>
                                 </button>
 
                                 <a class="text-button source-link" href="https://github.com/giakiet00/Pacman"
                                     target="_blank" rel="noopener noreferrer"
                                     aria-label="View Pac-Man source code on GitHub">
-                                    GitHub code <span aria-hidden="true">↗</span>
+                                    GitHub code
+
+                                    <span aria-hidden="true">↗</span>
                                 </a>
+
                             </div>
+
                         </div>
+
                     </article>
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- CONTACT -->
+        <!-- =========================================
+             CONTACT
+        ========================================= -->
+
         <section class="section contact-section" id="contact" aria-labelledby="contact-heading">
 
             <div class="container contact-panel">
 
                 <div class="contact-content">
 
-                    <p class="section-kicker">04 / LET'S CONNECT</p>
+                    <p class="section-kicker">
+                        04 / LET'S CONNECT
+                    </p>
 
                     <h2 id="contact-heading">
                         Have an opportunity <span>in mind?</span>
                     </h2>
 
                     <p>
-                        I'm looking for a chance to learn, contribute, and grow
-                        as a software developer. I'd love to hear from you.
+                        I'm looking for a chance to learn, contribute,
+                        and grow as a software developer.
+
+                        I'd love to hear from you.
                     </p>
 
                     <!-- Contact Form -->
+
                     <form class="contact-form" id="contact-form"
                         action="https://formsubmit.co/kietnhgce200123@gmail.com" method="POST">
 
@@ -320,6 +890,7 @@
                         <input type="hidden" name="_url" value="https://giakiet00.github.io/Portfolio/">
 
                         <!-- Spam Protection -->
+
                         <div class="contact-honeypot" aria-hidden="true">
 
                             <label for="contact-website">
@@ -330,7 +901,8 @@
 
                         </div>
 
-                        <!-- Name & Email -->
+                        <!-- Name and Email -->
+
                         <div class="contact-form-row">
 
                             <div class="contact-field">
@@ -358,6 +930,7 @@
                         </div>
 
                         <!-- Message -->
+
                         <div class="contact-field">
 
                             <label for="contact-message">
@@ -370,40 +943,39 @@
 
                         </div>
 
-                        <!-- Send Button -->
+                        <!-- Submit Button -->
+
                         <button class="button button-dark contact-submit" type="submit">
-
                             Send Message
-                            <span aria-hidden="true">↗</span>
 
+                            <span aria-hidden="true">↗</span>
                         </button>
 
-                        <!-- Status Message -->
-                        <p class="form-status" id="contact-form-status" role="status" aria-live="polite">
-                        </p>
+                        <!-- Status -->
+
+                        <p class="form-status" id="contact-form-status" role="status" aria-live="polite"></p>
 
                         <p class="contact-privacy">
-                            Messages are processed by FormSubmit to deliver them to my email.
+                            Messages are processed by FormSubmit
+                            to deliver them to my email.
                         </p>
 
                     </form>
 
                     <!-- Other Contact Options -->
+
                     <div class="contact-buttons">
 
                         <button class="button button-outline-dark" type="button"
                             data-copy-email="kietnhgce200123@gmail.com" aria-live="polite">
-
                             Copy email address
-
                         </button>
 
                         <a class="button button-outline-dark" href="https://github.com/giakiet00" target="_blank"
                             rel="noopener noreferrer">
-
                             My GitHub
-                            <span aria-hidden="true">↗</span>
 
+                            <span aria-hidden="true">↗</span>
                         </a>
 
                     </div>
@@ -411,6 +983,7 @@
                 </div>
 
                 <!-- Decoration -->
+
                 <div class="contact-art" aria-hidden="true">
 
                     <span>@</span>
@@ -427,26 +1000,64 @@
 
     </main>
 
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
+
     <footer class="site-footer">
+
         <div class="container footer-inner">
-            <span>© <span id="year">2026</span> Nguyen Hoang Gia Kiet</span>
-            <a href="#top">Back to top ↑</a>
+
+            <span>
+                © <span id="year">2026</span> Nguyen Hoang Gia Kiet
+            </span>
+
+            <a href="#top">
+                Back to top ↑
+            </a>
+
         </div>
+
     </footer>
 
+    <!-- =========================================
+         PROJECT DIALOG
+    ========================================= -->
+
     <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title">
-        <div class="dialog-header"><span class="section-kicker" id="dialog-eyebrow">PROJECT DETAILS</span><button
-                type="button" class="dialog-close" aria-label="Close project details">×</button></div>
-        <h2 id="dialog-title"></h2>
-        <p class="dialog-lead" id="dialog-lead"></p>
-        <div class="dialog-detail">
-            <h3>My contribution</h3>
-            <ul id="dialog-contributions"></ul>
-            <h3>Technologies</h3>
-            <div class="skill-tags" id="dialog-tech"></div>
-            <p class="dialog-footnote" id="dialog-note"></p>
+
+        <div class="dialog-header">
+
+            <span class="section-kicker" id="dialog-eyebrow">
+                PROJECT DETAILS
+            </span>
+
+            <button type="button" class="dialog-close" aria-label="Close project details">
+                ×
+            </button>
+
         </div>
+
+        <h2 id="dialog-title"></h2>
+
+        <p class="dialog-lead" id="dialog-lead"></p>
+
+        <div class="dialog-detail">
+
+            <h3>My contribution</h3>
+
+            <ul id="dialog-contributions"></ul>
+
+            <h3>Technologies</h3>
+
+            <div class="skill-tags" id="dialog-tech"></div>
+
+            <p class="dialog-footnote" id="dialog-note"></p>
+
+        </div>
+
     </dialog>
+
 </body>
 
 </html>
